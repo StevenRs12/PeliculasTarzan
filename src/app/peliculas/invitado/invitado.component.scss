@@ -1,0 +1,42 @@
+.tarjeta{
+    border: solid 1px gray;
+    border-radius: 10px;
+    height: 350px;
+    padding: 10px;
+    overflow-y: scroll;
+    cursor: pointer;
+    transition: all .2s;
+    &:hover{
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.36);
+    }
+    
+    }
+    
+    .container{
+        display: grid;
+        font-family: Arial;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 5px 5px;
+        grid-template-areas: "header header" "left contenido" "footer footer";
+    }
+    
+    .textoTarjeta{
+        font-family: inherit;
+        font-size: 13px;
+    }
+    
+    .tituloPelicula{
+        border-bottom: solid black;
+    }
+    
+    .tituloTarjeta{
+        font-size: 20px;
+        font-weight: bold;
+        font-family: inherit;
+    }
+    
+    .centrar{
+        padding: 10px;
+        display: flex;
+        margin: auto;
+    }

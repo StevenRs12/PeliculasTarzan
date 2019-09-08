@@ -1,0 +1,15 @@
+<div *ngIf="ususarioSesionStorage">
+
+    <app-navbar [ususarioSesion]="ususarioSesionStorage"></app-navbar>
+
+    <div class="page-body-wrapper">
+        <app-sidebar [ususarioSesion]="ususarioSesionStorage"></app-sidebar>
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <router-outlet></router-outlet>
+            </div>
+            <app-footer></app-footer>
+        </div>
+    </div>
+
+</div>

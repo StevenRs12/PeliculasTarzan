@@ -1,0 +1,63 @@
+<nav class="sidebar sidebar-offcanvas">
+  <ul class="nav">
+    <li class="nav-item nav-profile">
+      <div class="nav-link">
+
+        <div class="user-wrapper">
+          <div class="profile-image">
+            <img src="assets/images/faces/face1.jpg" alt="profile image">
+          </div>
+
+          <div class="text-wrapper">
+            <p class="profile-name">{{ususarioSesion.nombre}} {{ususarioSesion.apellido}}</p>
+            <div *ngIf="ususarioSesion.esAdmin">
+                <p class="profile-name">Admin</p>
+            </div>
+            <div *ngIf="!ususarioSesion.esAdmin">
+                <p class="profile-name">Usuario</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a routerLink="/PeliculasTarzan/principal" class="nav-link">
+        <i class="menu-icon fa fa-tachometer-alt"></i>
+        <span class="menu-title">Peliculas</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a routerLink="/PeliculasTarzan/perfil" class="nav-link">
+        <i class="menu-icon fa fa-clipboard-list"></i>
+        <span class="menu-title">Perfil</span>
+      </a>
+    </li>
+
+    <li class="nav-item" *ngIf="esAdmin">
+      <a routerLink="/PeliculasTarzan/configuraciones" class="nav-link">
+        <i class="menu-icon fa fa-table"></i>
+        <span class="menu-title">Configurar Peliculas</span>
+      </a>
+    </li>
+
+    <li class="nav-item" *ngIf="esAdmin">
+      <a routerLink="/PeliculasTarzan/reportes" class="nav-link">
+        <i class="menu-icon fa fa-table"></i>
+        <span class="menu-title">Estadisticas</span>
+      </a>
+    </li>
+
+
+    <li class="nav-item">
+      <a routerLink="/login" class="nav-link cursor" (click)=cerrarSesion();>
+        <i class="menu-icon fa fa-sign-out-alt"></i>
+        <span class="menu-title">Cerrar sesión</span>
+      </a>
+    </li>
+
+  </ul>
+</nav>

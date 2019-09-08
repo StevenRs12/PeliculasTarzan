@@ -1,0 +1,57 @@
+<div class="row">
+
+    <div class="col-md-6">
+        <img src="assets/images/logo.png" alt="logo" style="padding: 20px;">
+    </div>
+
+    <div class="col-md-3" style="margin-top: 20px;">
+        <div class="input-group">
+            <input type="palabraBusqueda" class="form-control" placeholder="Filtro" required
+                [(ngModel)]="palabraBusqueda" (keyup)="nuevaBusqueda()" name="palabraBusqueda">
+
+        </div>
+    </div>
+
+    <div class="col-md-1">
+        <button class="btn btn-primary" (click)="irLogin()" style="margin-top: 20px;">
+            Login
+        </button>
+    </div>
+
+    <div class="col-md-1">
+        <button class="btn btn-primary" (click)="irRegistro()" style="margin-top: 20px;">
+            Resgistro
+        </button>
+    </div>
+
+    <div class="col-md-1"></div>
+</div>
+
+
+<div class="container">
+    <div *ngFor="let pelicula of peliculas">
+
+        <div class="">
+            <div class="tarjeta" (click)=reservar(pelicula)>
+                <div class="tituloPelicula">
+                    <span class=tituloTarjeta> {{pelicula.titulo}} </span>
+                    <p> Director: {{pelicula.director}}</p>
+                    <span> Valor: {{pelicula.costo | currency}}</span>
+                    <span style="text-align: right"> Disponibles: {{pelicula.unidadesDisponibles}}</span>
+
+                </div>
+
+                <span class=" textoTarjeta"> {{pelicula.descripcion}}</span>
+
+                <br>
+                <div class="actores">
+                    <h6> Actores:</h6>
+                    <div *ngFor=" let actor of  pelicula.actores">
+                        <span class="badge badge-primary">{{actor}}</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<h4>Reporte de reservas</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Pelicula</th>
+            <th scope="col">Correo usuario</th>
+            <th scope="col">Fecha reserva</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reporte of reportes ">
+            <th >{{reporte.id}}</th>
+            <td>{{reporte.pelicula}}</td>
+            <td>{{reporte.correoUsuario}}</td>
+            <td>{{reporte.Fecha }}</td>
+        </tr>
+
+    </tbody>
+</table>
